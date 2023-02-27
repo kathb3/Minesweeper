@@ -10,7 +10,6 @@ void setup() {
     size(400, 400);
     textAlign(CENTER, CENTER);
 
-    // make the manager
     Interactive.make(this);
     buttons = new MSButton[NUM_ROWS][NUM_COLS];
     for (int j = 0; j < NUM_ROWS; j++) {
@@ -60,19 +59,21 @@ public boolean isWon()
     return false;
 }
 public void displayLosingMessage() {
-    //your code here
      for(int i=0;i<bombs.size();i++)
     {
         bombs.get(i).setClicked(true);
     }
-    buttons[10][8].setLabel("N");
-    buttons[10][9].setLabel("I");
-    buttons[10][10].setLabel("C");
-    buttons[10][11].setLabel("E");
-    buttons[11][8].setLabel("T");
-    buttons[11][9].setLabel("R");
-    buttons[11][10].setLabel("Y");
-    buttons[11][11].setLabel("!");
+    buttons[10][7].setLabel("S");
+    buttons[10][8].setLabel("O");
+    buttons[10][9].setLabel("R");
+    buttons[10][10].setLabel("R");
+    buttons[10][11].setLabel("Y");
+    buttons[11][7].setLabel("L");
+    buttons[11][8].setLabel("O");
+    buttons[11][9].setLabel("S");
+    buttons[11][10].setLabel("E");
+    buttons[11][11].setLabel("R");
+    buttons[11][12].setLabel("!");
     
 }
 public void displayWinningMessage() {
@@ -101,7 +102,7 @@ public class MSButton {
         y = r * height;
         label = "";
         marked = clicked = false;
-        Interactive.add(this); // register it with the manager
+        Interactive.add(this); 
     }
     public boolean isMarked() {
         return marked;
